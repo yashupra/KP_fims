@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KP Films | Booking Portal</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:#0f0f0f;
+color:white;
+}
+
+.container{
+max-width:850px;
+margin:20px auto;
+padding:25px;
+background:#1b1b1b;
+border-radius:15px;
+box-shadow:0 0 20px rgba(255,215,0,0.3);
+}
+
+h1{
+text-align:center;
+color:gold;
+}
+
+.subtitle{
+text-align:center;
+color:#cccccc;
+margin-bottom:25px;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+color:gold;
+font-weight:bold;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#2c2c2c;
+color:white;
+}
+
+textarea{
+resize:none;
+}
+
+.upload{
+border:2px dashed gold;
+padding:20px;
+text-align:center;
+border-radius:10px;
+margin-top:10px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+}
+
+.whatsapp-btn{
+background:gold;
+color:black;
+}
+
+.payment-box{
+margin-top:30px;
+text-align:center;
+border:1px solid gold;
+padding:20px;
+border-radius:10px;
+}
+
+.payment-btn{
+display:inline-block;
+background:#28a745;
+padding:15px 30px;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+.footer{
+margin-top:20px;
+text-align:center;
+color:#999;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>KP FILMS</h1>
+
+<p class="subtitle">
+Video Editing | Wedding Films | Reels | Photo Editing
+</p>
+
+<form>
+
+<label>Customer Name</label>
+<input type="text" id="name">
+
+<label>Mobile Number</label>
+<input type="tel" id="mobile">
+
+<label>Email Address</label>
+<input type="email" id="email">
+
+<label>Address</label>
+<input type="text" id="address">
+
+<label>Select Service</label>
+
+<select id="service">
+
+<option>Wedding Video Editing</option>
+<option>Photo Editing</option>
+<option>Birthday Video</option>
+<option>Instagram Reels</option>
+<option>YouTube Editing</option>
+<option>Marketing Reel</option>
+<option>Car Delivery Reel</option>
+<option>Other</option>
+
+</select>
+
+<label>Event Date</label>
+<input type="date" id="fromdate">
+
+<label>Delivery Date</label>
+<input type="date" id="todate">
+
+<label>Upload Photo / Video Files</label>
+
+<div class="upload">
+
+<input type="file" multiple>
+
+</div>
+
+<label>Project Details</label>
+
+<textarea rows="5" id="message"></textarea>
+
+<button
+type="button"
+class="whatsapp-btn"
+onclick="sendWhatsapp()">
+
+BOOK ON WHATSAPP
+
+</button>
+
+</form>
+
+<div class="payment-box">
+
+<h2 style="color:gold;">
+Advance Payment
+</h2>
+
+<p>
+₹500 Advance Booking Fee
+</p>
+
+<br>
+
+<a
+class="payment-btn"
+href="upi://pay?pa=prayash1035@okaxis&pn=KP%20Films&am=500&cu=INR">
+
+Pay ₹500 Now
+
+</a>
+
+</div>
+
+<div class="footer">
+
+KP FILMS © 2026
+
+</div>
+
+</div>
+
+<script>
+
+function sendWhatsapp(){
+
+var name=document.getElementById("name").value;
+var mobile=document.getElementById("mobile").value;
+var email=document.getElementById("email").value;
+var address=document.getElementById("address").value;
+var service=document.getElementById("service").value;
+var fromdate=document.getElementById("fromdate").value;
+var todate=document.getElementById("todate").value;
+var message=document.getElementById("message").value;
+
+var text=
+"🎬 KP FILMS BOOKING%0A%0A"+
+"Name: "+name+"%0A"+
+"Mobile: "+mobile+"%0A"+
+"Email: "+email+"%0A"+
+"Address: "+address+"%0A%0A"+
+"Service: "+service+"%0A"+
+"Event Date: "+fromdate+"%0A"+
+"Delivery Date: "+todate+"%0A%0A"+
+"Requirements:%0A"+message;
+
+window.open(
+"https://wa.me/919510925401?text="+text,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
